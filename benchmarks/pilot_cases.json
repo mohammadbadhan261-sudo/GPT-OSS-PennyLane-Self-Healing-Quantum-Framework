@@ -1,0 +1,657 @@
+[
+  {
+    "id": "bell_reverse_cnot",
+    "task_id": "bell_phi",
+    "category": "single",
+    "fault_count": 1,
+    "goal": "Implement the two-qubit operation: H on wire 0, then CNOT control wire 0 target wire 1 (Bell phi+ state on |00>).",
+    "faulty": {
+      "n_qubits": 2,
+      "gates": [
+        {
+          "name": "H",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            1,
+            0
+          ]
+        }
+      ]
+    },
+    "reference": {
+      "n_qubits": 2,
+      "gates": [
+        {
+          "name": "H",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "bell_double_fault",
+    "task_id": "bell_phi",
+    "category": "compound",
+    "fault_count": 2,
+    "goal": "Implement H on wire 0 followed by CNOT control 0 target 1. Preserve this unitary operation, not just one output state.",
+    "faulty": {
+      "n_qubits": 2,
+      "gates": [
+        {
+          "name": "X",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            1,
+            0
+          ]
+        }
+      ]
+    },
+    "reference": {
+      "n_qubits": 2,
+      "gates": [
+        {
+          "name": "H",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "psi_missing_x",
+    "task_id": "bell_psi",
+    "category": "single",
+    "fault_count": 1,
+    "goal": "Implement X on wire 1, H on wire 0, then CNOT control 0 target 1 (prepares psi+ from |00>).",
+    "faulty": {
+      "n_qubits": 2,
+      "gates": [
+        {
+          "name": "H",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    "reference": {
+      "n_qubits": 2,
+      "gates": [
+        {
+          "name": "X",
+          "wires": [
+            1
+          ]
+        },
+        {
+          "name": "H",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "psi_double_fault",
+    "task_id": "bell_psi",
+    "category": "compound",
+    "fault_count": 2,
+    "goal": "Implement X on wire 1, H on wire 0, then CNOT control 0 target 1. Match the complete operation.",
+    "faulty": {
+      "n_qubits": 2,
+      "gates": [
+        {
+          "name": "X",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "H",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            1,
+            0
+          ]
+        }
+      ]
+    },
+    "reference": {
+      "n_qubits": 2,
+      "gates": [
+        {
+          "name": "X",
+          "wires": [
+            1
+          ]
+        },
+        {
+          "name": "H",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "phi_minus_missing_z",
+    "task_id": "bell_phi_minus",
+    "category": "single",
+    "fault_count": 1,
+    "goal": "Implement H on wire 0, CNOT control 0 target 1, then Z on wire 0. This prepares Bell phi-minus.",
+    "faulty": {
+      "n_qubits": 2,
+      "gates": [
+        {
+          "name": "H",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    "reference": {
+      "n_qubits": 2,
+      "gates": [
+        {
+          "name": "H",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "Z",
+          "wires": [
+            0
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "phi_minus_double_fault",
+    "task_id": "bell_phi_minus",
+    "category": "compound",
+    "fault_count": 2,
+    "goal": "Implement H on wire 0, CNOT control 0 target 1, then Z on wire 0. Preserve relative phase.",
+    "faulty": {
+      "n_qubits": 2,
+      "gates": [
+        {
+          "name": "H",
+          "wires": [
+            1
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    "reference": {
+      "n_qubits": 2,
+      "gates": [
+        {
+          "name": "H",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "Z",
+          "wires": [
+            0
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "ghz3_reverse_last",
+    "task_id": "ghz3",
+    "category": "single",
+    "fault_count": 1,
+    "goal": "Implement 3-qubit GHZ preparation: H on 0, CNOT(0,1), then CNOT(1,2).",
+    "faulty": {
+      "n_qubits": 3,
+      "gates": [
+        {
+          "name": "H",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            2,
+            1
+          ]
+        }
+      ]
+    },
+    "reference": {
+      "n_qubits": 3,
+      "gates": [
+        {
+          "name": "H",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            1,
+            2
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "ghz3_double_fault",
+    "task_id": "ghz3",
+    "category": "compound",
+    "fault_count": 2,
+    "goal": "Implement H(0), CNOT control 0 target 1, CNOT control 1 target 2, in that order.",
+    "faulty": {
+      "n_qubits": 3,
+      "gates": [
+        {
+          "name": "X",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            1,
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    "reference": {
+      "n_qubits": 3,
+      "gates": [
+        {
+          "name": "H",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            1,
+            2
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "ghz4_missing_middle",
+    "task_id": "ghz4",
+    "category": "single",
+    "fault_count": 1,
+    "goal": "Implement 4-qubit GHZ: H(0), CNOT(0,1), CNOT(1,2), CNOT(2,3).",
+    "faulty": {
+      "n_qubits": 4,
+      "gates": [
+        {
+          "name": "H",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    "reference": {
+      "n_qubits": 4,
+      "gates": [
+        {
+          "name": "H",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            2,
+            3
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "ghz4_double_fault",
+    "task_id": "ghz4",
+    "category": "compound",
+    "fault_count": 2,
+    "goal": "Implement H(0), CNOT(0,1), CNOT(1,2), CNOT(2,3). Match the full operation.",
+    "faulty": {
+      "n_qubits": 4,
+      "gates": [
+        {
+          "name": "H",
+          "wires": [
+            1
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            2,
+            1
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    "reference": {
+      "n_qubits": 4,
+      "gates": [
+        {
+          "name": "H",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            2,
+            3
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "rotation_wrong_angle",
+    "task_id": "rotated_entangler",
+    "category": "single",
+    "fault_count": 1,
+    "goal": "Apply RY rotation on qubit 0 by exactly 1.0 radians, then CNOT(0,1), then RZ on qubit 1 by 0.5 radians.",
+    "faulty": {
+      "n_qubits": 2,
+      "gates": [
+        {
+          "name": "RY",
+          "wires": [
+            0
+          ],
+          "theta": 0.4
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "RZ",
+          "wires": [
+            1
+          ],
+          "theta": 0.5
+        }
+      ]
+    },
+    "reference": {
+      "n_qubits": 2,
+      "gates": [
+        {
+          "name": "RY",
+          "wires": [
+            0
+          ],
+          "theta": 1.0
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "RZ",
+          "wires": [
+            1
+          ],
+          "theta": 0.5
+        }
+      ]
+    }
+  },
+  {
+    "id": "rotation_compound",
+    "task_id": "rotated_entangler",
+    "category": "compound",
+    "fault_count": 2,
+    "goal": "Apply RY(1.0) to wire 0, CNOT(0,1), RZ(0.5) to wire 1 in sequence. Use radians.",
+    "faulty": {
+      "n_qubits": 2,
+      "gates": [
+        {
+          "name": "RY",
+          "wires": [
+            0
+          ],
+          "theta": 0.4
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            1,
+            0
+          ]
+        },
+        {
+          "name": "RZ",
+          "wires": [
+            1
+          ],
+          "theta": 0.5
+        }
+      ]
+    },
+    "reference": {
+      "n_qubits": 2,
+      "gates": [
+        {
+          "name": "RY",
+          "wires": [
+            0
+          ],
+          "theta": 1.0
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "RZ",
+          "wires": [
+            1
+          ],
+          "theta": 0.5
+        }
+      ]
+    }
+  }
+]

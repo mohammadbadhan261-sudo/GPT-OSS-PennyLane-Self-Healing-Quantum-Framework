@@ -1,0 +1,5 @@
+# Windows recommended: Python 3.12. No API key, no cloud billing.
+pennylane>=0.42,<0.47
+numpy>=1.26,<3
+streamlit>=1.42,<2
+matplotlib>=3.8,<4
