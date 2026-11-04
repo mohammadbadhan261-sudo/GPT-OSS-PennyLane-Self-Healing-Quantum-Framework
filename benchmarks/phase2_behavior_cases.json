@@ -1,0 +1,689 @@
+[
+  {
+    "id": "behavior_bell_reverse_cnot",
+    "task_id": "bell_phi",
+    "category": "single",
+    "fault_count": 1,
+    "goal": "Starting from |00>, prepare the normalized pure state (|00> + |11>)/sqrt(2). The two nonzero amplitudes must have equal relative phase. Any equivalent state preparation is allowed.",
+    "faulty": {
+      "n_qubits": 2,
+      "gates": [
+        {
+          "name": "H",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            1,
+            0
+          ]
+        }
+      ]
+    },
+    "reference": {
+      "n_qubits": 2,
+      "gates": [
+        {
+          "name": "H",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    "task_type": "state"
+  },
+  {
+    "id": "behavior_bell_double_fault",
+    "task_id": "bell_phi",
+    "category": "compound",
+    "fault_count": 2,
+    "goal": "Starting from |00>, prepare the normalized pure state (|00> + |11>)/sqrt(2). The two nonzero amplitudes must have equal relative phase. Any equivalent state preparation is allowed.",
+    "faulty": {
+      "n_qubits": 2,
+      "gates": [
+        {
+          "name": "X",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            1,
+            0
+          ]
+        }
+      ]
+    },
+    "reference": {
+      "n_qubits": 2,
+      "gates": [
+        {
+          "name": "H",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    "task_type": "state"
+  },
+  {
+    "id": "behavior_psi_missing_x",
+    "task_id": "bell_psi",
+    "category": "single",
+    "fault_count": 1,
+    "goal": "Starting from |00>, prepare the normalized pure state (|01> + |10>)/sqrt(2). Amplitude phases must agree. Any equivalent state preparation is allowed.",
+    "faulty": {
+      "n_qubits": 2,
+      "gates": [
+        {
+          "name": "H",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    "reference": {
+      "n_qubits": 2,
+      "gates": [
+        {
+          "name": "X",
+          "wires": [
+            1
+          ]
+        },
+        {
+          "name": "H",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    "task_type": "state"
+  },
+  {
+    "id": "behavior_psi_double_fault",
+    "task_id": "bell_psi",
+    "category": "compound",
+    "fault_count": 2,
+    "goal": "Starting from |00>, prepare the normalized pure state (|01> + |10>)/sqrt(2). Amplitude phases must agree. Any equivalent state preparation is allowed.",
+    "faulty": {
+      "n_qubits": 2,
+      "gates": [
+        {
+          "name": "X",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "H",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            1,
+            0
+          ]
+        }
+      ]
+    },
+    "reference": {
+      "n_qubits": 2,
+      "gates": [
+        {
+          "name": "X",
+          "wires": [
+            1
+          ]
+        },
+        {
+          "name": "H",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    "task_type": "state"
+  },
+  {
+    "id": "behavior_phi_minus_missing_z",
+    "task_id": "bell_phi_minus",
+    "category": "single",
+    "fault_count": 1,
+    "goal": "Starting from |00>, prepare the normalized pure state (|00> - |11>)/sqrt(2). The minus sign represents a physically meaningful relative phase.",
+    "faulty": {
+      "n_qubits": 2,
+      "gates": [
+        {
+          "name": "H",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    "reference": {
+      "n_qubits": 2,
+      "gates": [
+        {
+          "name": "H",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "Z",
+          "wires": [
+            0
+          ]
+        }
+      ]
+    },
+    "task_type": "state"
+  },
+  {
+    "id": "behavior_phi_minus_double_fault",
+    "task_id": "bell_phi_minus",
+    "category": "compound",
+    "fault_count": 2,
+    "goal": "Starting from |00>, prepare the normalized pure state (|00> - |11>)/sqrt(2). The minus sign represents a physically meaningful relative phase.",
+    "faulty": {
+      "n_qubits": 2,
+      "gates": [
+        {
+          "name": "H",
+          "wires": [
+            1
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    "reference": {
+      "n_qubits": 2,
+      "gates": [
+        {
+          "name": "H",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "Z",
+          "wires": [
+            0
+          ]
+        }
+      ]
+    },
+    "task_type": "state"
+  },
+  {
+    "id": "behavior_ghz3_reverse_last",
+    "task_id": "ghz3",
+    "category": "single",
+    "fault_count": 1,
+    "goal": "From |000>, prepare the normalized state (|000> + |111>)/sqrt(2), including the relative phase between components.",
+    "faulty": {
+      "n_qubits": 3,
+      "gates": [
+        {
+          "name": "H",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            2,
+            1
+          ]
+        }
+      ]
+    },
+    "reference": {
+      "n_qubits": 3,
+      "gates": [
+        {
+          "name": "H",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    "task_type": "state"
+  },
+  {
+    "id": "behavior_ghz3_double_fault",
+    "task_id": "ghz3",
+    "category": "compound",
+    "fault_count": 2,
+    "goal": "From |000>, prepare the normalized state (|000> + |111>)/sqrt(2), including the relative phase between components.",
+    "faulty": {
+      "n_qubits": 3,
+      "gates": [
+        {
+          "name": "X",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            1,
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    "reference": {
+      "n_qubits": 3,
+      "gates": [
+        {
+          "name": "H",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    "task_type": "state"
+  },
+  {
+    "id": "behavior_ghz4_missing_middle",
+    "task_id": "ghz4",
+    "category": "single",
+    "fault_count": 1,
+    "goal": "From |0000>, prepare the normalized state (|0000> + |1111>)/sqrt(2), including the relative phase between components.",
+    "faulty": {
+      "n_qubits": 4,
+      "gates": [
+        {
+          "name": "H",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    "reference": {
+      "n_qubits": 4,
+      "gates": [
+        {
+          "name": "H",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    "task_type": "state"
+  },
+  {
+    "id": "behavior_ghz4_double_fault",
+    "task_id": "ghz4",
+    "category": "compound",
+    "fault_count": 2,
+    "goal": "From |0000>, prepare the normalized state (|0000> + |1111>)/sqrt(2), including the relative phase between components.",
+    "faulty": {
+      "n_qubits": 4,
+      "gates": [
+        {
+          "name": "H",
+          "wires": [
+            1
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            2,
+            1
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    "reference": {
+      "n_qubits": 4,
+      "gates": [
+        {
+          "name": "H",
+          "wires": [
+            0
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    "task_type": "state"
+  },
+  {
+    "id": "behavior_phase_flip_wrong_wire",
+    "task_id": "phase_condition",
+    "category": "single",
+    "fault_count": 1,
+    "task_type": "operation",
+    "goal": "Implement the two-qubit linear operation U that maps each basis state |a,b> to (-1)^(a*b)|a,b> for bits a,b in {0,1}. The transformation must work on arbitrary superpositions.",
+    "faulty": {
+      "n_qubits": 2,
+      "gates": [
+        {
+          "name": "Z",
+          "wires": [
+            0
+          ]
+        }
+      ]
+    },
+    "reference": {
+      "n_qubits": 2,
+      "gates": [
+        {
+          "name": "CZ",
+          "wires": [
+            0,
+            1
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "behavior_phase_flip_double",
+    "task_id": "phase_condition",
+    "category": "compound",
+    "fault_count": 2,
+    "task_type": "operation",
+    "goal": "Implement the two-qubit linear operation U that maps each basis state |a,b> to (-1)^(a*b)|a,b> for bits a,b in {0,1}. The transformation must work on arbitrary superpositions.",
+    "faulty": {
+      "n_qubits": 2,
+      "gates": [
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "Z",
+          "wires": [
+            0
+          ]
+        }
+      ]
+    },
+    "reference": {
+      "n_qubits": 2,
+      "gates": [
+        {
+          "name": "CZ",
+          "wires": [
+            0,
+            1
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "behavior_swap_missing_action",
+    "task_id": "swap_register",
+    "category": "single",
+    "fault_count": 1,
+    "task_type": "operation",
+    "goal": "Implement a two-qubit unitary satisfying U|a,b> = |b,a> for all computational basis inputs |a,b>. The transformation must also work on their superpositions.",
+    "faulty": {
+      "n_qubits": 2,
+      "gates": [
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    "reference": {
+      "n_qubits": 2,
+      "gates": [
+        {
+          "name": "SWAP",
+          "wires": [
+            0,
+            1
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "behavior_swap_double",
+    "task_id": "swap_register",
+    "category": "compound",
+    "fault_count": 2,
+    "task_type": "operation",
+    "goal": "Implement a two-qubit unitary satisfying U|a,b> = |b,a> for all computational basis inputs |a,b>. The transformation must also work on their superpositions.",
+    "faulty": {
+      "n_qubits": 2,
+      "gates": [
+        {
+          "name": "CNOT",
+          "wires": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "CNOT",
+          "wires": [
+            1,
+            0
+          ]
+        }
+      ]
+    },
+    "reference": {
+      "n_qubits": 2,
+      "gates": [
+        {
+          "name": "SWAP",
+          "wires": [
+            0,
+            1
+          ]
+        }
+      ]
+    }
+  }
+]
